@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import './App.scss';
+import AppView from './AppView';
 
 function App() {
 	const [toDos, setToDo] = useState(['Feed cat', 'Sleep']);
@@ -31,13 +31,13 @@ function App() {
 	}
 
 	return (	
-		<div className="main">
-			<h1>ToDo Hooks</h1>
-			<input type="text" onKeyDown={add} value={val} onChange={updateField} className="input-box" />
-			<ul>
-				{toDos.map((item, i) => <li key={i} onDoubleClick={() => remove(i)}>{item}</li>)}
-			</ul>
-		</div>
+		<AppView
+			toDos={toDos}
+			updateField={updateField}
+			add={add}
+			remove={remove}
+			val={val}
+		/>
 	);
 }
 
