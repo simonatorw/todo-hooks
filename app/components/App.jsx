@@ -10,6 +10,10 @@ function App() {
 		console.log('Initializing...');
 	}, []);
 
+	useEffect(() => {
+		console.log('Updated...');
+	}, [toDos]);
+
 	const add = e => {
 		if (e.keyCode === 13) {
 			setToDo([ ...toDos, val]);
