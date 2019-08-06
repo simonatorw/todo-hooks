@@ -15,7 +15,7 @@ function App() {
 	}, [toDos]);
 
 	const add = e => {
-		if (e.keyCode === 13) {
+		if (e.keyCode === 13 && val) {
 			setToDo([ ...toDos, val]);
 			setVal('');
 		}
@@ -33,7 +33,7 @@ function App() {
 	return (	
 		<div className="main">
 			<h1>ToDo Hooks</h1>
-			<input type="text" onKeyDown={add} value={val} onChange={updateField} />
+			<input type="text" onKeyDown={add} value={val} onChange={updateField} className="input-box" />
 			<ul>
 				{toDos.map((item, i) => <li key={i} onDoubleClick={() => remove(i)}>{item}</li>)}
 			</ul>
