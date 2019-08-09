@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './App.scss';
+import './ToDo.scss';
 
-function AppView({
+function ToDoView({
   toDos,
   updateField,
   add,
@@ -12,7 +12,7 @@ function AppView({
 }) {
 	return (
 		<div className="main">
-			<h1>ToDo Hooks</h1>
+			<h2>ToDo Hooks</h2>
       <input type="text"
         onKeyDown={add}
         value={val}
@@ -33,7 +33,7 @@ function AppView({
 	);
 }
 
-AppView.propTypes = {
+ToDoView.propTypes = {
   toDos: PropTypes.array.isRequired,
   updateField: PropTypes.func.isRequired,
   add: PropTypes.func.isRequired,
@@ -41,4 +41,4 @@ AppView.propTypes = {
   val: PropTypes.string.isRequired
 };
 
-export default AppView;
+export default ToDoView;

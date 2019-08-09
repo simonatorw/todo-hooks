@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
-import AppView from './AppView';
+import ToDoView from './ToDoView';
 
-function App() {
+function ToDo() {
 	const [toDos, setToDo] = useState(['Feed cat', 'Sleep']);
 	const [val, setVal] = useState('');
 
@@ -31,7 +31,7 @@ function App() {
 	}
 
 	return (	
-		<AppView
+		<ToDoView
 			toDos={toDos}
 			updateField={updateField}
 			add={add}
@@ -41,4 +41,4 @@ function App() {
 	);
 }
 
-export default App;
+export default ToDo;
