@@ -26,8 +26,10 @@ function ToDo() {
 	}
 
 	const remove = i => {
-		toDos.splice(i, 1);
-		setToDo([ ...toDos ]);
+		const list = toDos.slice();
+
+		list.splice(i, 1);
+		setToDo(list);
 	}
 
 	return (	
