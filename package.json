@@ -12,7 +12,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --colors --coverage",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "test:cov": "set CI=true && react-scripts test --colors --coverage"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -32,5 +33,12 @@
   "devDependencies": {
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/index.js",
+      "!src/serviceWorker.js"
+    ]
   }
 }
