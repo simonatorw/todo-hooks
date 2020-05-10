@@ -6,7 +6,7 @@ import { add, updateField, remove } from './ToDoApi';
 export default function ToDo() {
 	const [toDos, setToDo] = useState(['Feed cat', 'Sleep']);
 	const [val, setVal] = useState('');
-	
+
 	const addCb = React.useCallback((e) => add(val, toDos, setToDo, setVal, e), [val, toDos]);
 	const updateCb = React.useCallback((e) => updateField(setVal, e), []);
 	const removeCb = React.useCallback((index, e) => remove(index, toDos, setToDo, e), [toDos]);
@@ -18,7 +18,7 @@ export default function ToDo() {
 	React.useEffect(() => {
 		console.log('Updated...');
 	}, [toDos]);
-
+	//test
 	return (	
 		<ToDoView
 			toDos={toDos}
