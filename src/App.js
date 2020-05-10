@@ -5,7 +5,7 @@ import ToDo from './components/ToDo/ToDo';
 
 import './App.scss';
 
-function App() {
+export default function App() {
   return (
     <div className="app">
       <Header />
@@ -13,5 +13,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

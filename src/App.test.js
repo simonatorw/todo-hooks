@@ -1,9 +1,23 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+
 import App from './App';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+describe('App.js', () => {
+  let wrapper;
+
+  beforeEach(() => {
+    wrapper = shallow(<App />);
+  });
+
+  test('App has a container', () => {
+    expect(wrapper.find('.app').length).toBe(1);
+  });
+
+  test('App has a header', () => {
+    expect(wrapper.find('Header').length).toBe(1);
+  });
+
+  test('App has a todo comp', () => {
+    expect(wrapper.find('ToDo').length).toBe(1);
+  });
 });

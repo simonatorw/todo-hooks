@@ -1,46 +1,31 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 import ToDoView from './ToDoView';
+import { add, updateField, remove } from './ToDoApi';
 
-function ToDo() {
+export default function ToDo() {
 	const [toDos, setToDo] = useState(['Feed cat', 'Sleep']);
 	const [val, setVal] = useState('');
+	
+	const addCb = React.useCallback((e) => add(val, toDos, setToDo, setVal, e), [val, toDos]);
+	const updateCb = React.useCallback((e) => updateField(setVal, e), []);
+	const removeCb = React.useCallback((index, e) => remove(index, toDos, setToDo, e), [toDos]);
 
-	useEffect(() => {
+	React.useEffect(() => {
 		console.log('Initializing...');
 	}, []);
 
-	useEffect(() => {
+	React.useEffect(() => {
 		console.log('Updated...');
 	}, [toDos]);
-
-	const add = e => {
-		if (e.keyCode === 13 && val) {
-			setToDo([ ...toDos, val]);
-			setVal('');
-		}
-	}
-
-	const updateField = e => {
-		setVal(e.target.value);
-	}
-
-	const remove = i => {
-		const list = toDos.slice();
-
-		list.splice(i, 1);
-		setToDo(list);
-	}
 
 	return (	
 		<ToDoView
 			toDos={toDos}
-			updateField={updateField}
-			add={add}
-			remove={remove}
+			updateField={updateCb}
+			add={addCb}
+			remove={removeCb}
 			val={val}
 		/>
 	);
 }
-
-export default ToDo;
