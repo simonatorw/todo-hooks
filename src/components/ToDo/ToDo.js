@@ -18,7 +18,7 @@ export default function ToDo() {
 	React.useEffect(() => {
 		console.log('Updated...');
 	}, [toDos]);
-	//test
+
 	return (	
 		<ToDoView
 			toDos={toDos}
