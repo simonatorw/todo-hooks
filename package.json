@@ -11,9 +11,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --colors --coverage",
+    "test": "react-scripts test --env=node --colors --coverage",
     "eject": "react-scripts eject",
-    "test:cov": "set CI=true && react-scripts test --colors --coverage"
+    "test:cov": "set CI=true && react-scripts test --env=node --colors --coverage"
   },
   "eslintConfig": {
     "extends": "react-app"
