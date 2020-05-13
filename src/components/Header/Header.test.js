@@ -12,4 +12,8 @@ describe('Header.js', () => {
   test('Header has a title', () => {
     expect(wrapper.find('h1').length).toBe(1);
   });
+
+  test('Header has a container', () => {
+    expect(wrapper.find('.app-header').length).toBe(1);
+  });
 });

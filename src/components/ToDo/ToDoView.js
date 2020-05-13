@@ -28,7 +28,7 @@ export default function ToDoView({ toDos, updateField, add, remove, val }) {
 }
 
 ToDoView.propTypes = {
-  toDos: PropTypes.array.isRequired,
+  toDos: PropTypes.array,
   updateField: PropTypes.func,
   add: PropTypes.func,
   remove: PropTypes.func,

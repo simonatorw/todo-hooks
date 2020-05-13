@@ -1,13 +1,29 @@
 import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 
 import ToDo from './ToDo';
+
+jest.mock('react-redux', () => {
+  return {
+    useDispatch: jest.fn(),
+    useSelector: jest.fn()
+  };
+});
 
 describe('ToDo.js', () => {
   let wrapper;
   let useEffect;
   let useCb;
+  let state;
 
   beforeEach(() => {
+    state = {
+      toDoState: {}
+    };
+
+    useDispatch.mockImplementationOnce(() => jest.fn());
+    useSelector.mockImplementationOnce(f => f(state));
+
     useEffect = jest.spyOn(React, 'useEffect');
     useEffect.mockImplementationOnce(f => f());
     useEffect.mockImplementationOnce(f => f());
@@ -17,7 +33,7 @@ describe('ToDo.js', () => {
     useCb = jest.spyOn(React, 'useCallback');
     useCb.mockImplementationOnce(f => f(evt));
     useCb.mockImplementationOnce(f => f(evt));
-    useCb.mockImplementationOnce(f => f(1, evt));
+    useCb.mockImplementationOnce(f => f(1));
     
     wrapper = shallow(<ToDo />);
   });
