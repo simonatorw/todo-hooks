@@ -1,0 +1,47 @@
+.tool-tip {
+  display: inline-block;
+
+  .tip {
+    position: absolute;
+    background-color: #fff;
+    padding: 10px;
+    margin: -27px 0 0 80px;
+    color: #333;
+    border-radius: 5.25px;
+    box-shadow: 0 2px 12px 0 #ddd;
+    font-size: .8rem;
+    display: none;
+
+    &:after {
+      content: " ";
+      position: absolute;
+      top: 50%;
+      right: 100%;
+      margin-top: -8px;
+      border-width: 8px;
+      border-style: solid;
+      border-color: transparent #fff transparent transparent;
+    }
+  }
+
+  &:hover {
+    .tip {
+      display: block;
+      animation: fadeIn ease 2s;
+    }
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+
+    54% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+}

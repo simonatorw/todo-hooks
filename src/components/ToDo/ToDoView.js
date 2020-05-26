@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import ToolTip from '../ToolTip/ToolTip';
+
 import './ToDo.scss';
 
 export default function ToDoView({ toDos, updateField, add, remove, val }) {
@@ -15,12 +17,11 @@ export default function ToDoView({ toDos, updateField, add, remove, val }) {
       />
 			<ol className="list">
 				{toDos.map((item, i) => (
-          <li
-            key={i}
-            onDoubleClick={() => remove(i)}
-          >
-            {item}
-          </li>
+          <ToolTip msg={item} key={i} className="todo-tip">
+            <li onDoubleClick={() => remove(i)}>
+              {item}
+            </li>
+          </ToolTip>
         ))}
 			</ol>
 		</div>
