@@ -17,7 +17,7 @@ export default function ToDoView({ toDos, updateField, add, remove, val }) {
       />
 			<ol className="list">
 				{toDos.map((item, i) => (
-          <ToolTip msg={item} key={i} className="todo-tip">
+          <ToolTip msg={item} key={item} className="todo-tip">
             <li onDoubleClick={() => remove(i)}>
               {item}
             </li>

@@ -6,10 +6,11 @@ import './ToolTip.scss';
 export default function ToolTip({ children, msg, className }) {
   const childEl = useRef(null);
   const [ marginLeft, setMarginLeft ] = useState(0);
+  const width = childEl.current?.offsetWidth;
 
   useEffect(() => {
-    setMarginLeft(`${childEl.current.offsetWidth + 16}px`);
-  }, [childEl]);
+    setMarginLeft(`${width + 16}px`);
+  }, [width]);
 
   return (
     <div className={`tool-tip ${className}`}>
