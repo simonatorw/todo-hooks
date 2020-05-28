@@ -1,11 +1,15 @@
 .tool-tip {
   display: inline-block;
 
+  .child {
+    display: inline-block;  
+  }
+
   .tip {
     position: absolute;
     background-color: #fff;
     padding: 10px;
-    margin: -27px 0 0 80px;
+    margin: -27px 0 0 0;
     color: #333;
     border-radius: 5.25px;
     box-shadow: 0 2px 12px 0 #ddd;
