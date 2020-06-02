@@ -1,11 +1,11 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
 import './ToolTip.scss';
 
 export default function ToolTip({ children, msg, className }) {
-  const childEl = useRef(null);
-  const [ marginLeft, setMarginLeft ] = useState(0);
+  const childEl = React.useRef(null);
+  const [ marginLeft, setMarginLeft ] = useState('0px');
   const width = childEl.current?.offsetWidth;
 
   useEffect(() => {

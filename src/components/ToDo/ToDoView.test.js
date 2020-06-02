@@ -8,7 +8,7 @@ describe('ToDoView.js', () => {
 
   beforeEach(() => {
     props = {
-      toDos: [1, 2],
+      toDos: ['1', '2'],
       updateField: jest.fn(),
       add: jest.fn(),
       remove: jest.fn(),
