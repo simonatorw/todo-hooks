@@ -1,4 +1,4 @@
-import { add, remove } from './ToDoApi';
+import { add, remove, async } from './ToDoApi';
 
 describe('ToDoApi.js', () => {
   let toDos;
@@ -23,5 +23,11 @@ describe('ToDoApi.js', () => {
     remove(1, toDos, setToDoState);
 
     expect(toDos).toEqual([1]);
+  });
+
+  test('async', async () => {
+    const data = await async.getApi('./data.json');
+
+    expect(data.length).toBe(2);
   });
 });

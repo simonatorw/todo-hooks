@@ -1,27 +1,37 @@
-.main {
-  /* centering */
+.main-container {
   display: inline-block;
-  text-align: left;
-  padding: 30px 20px;
-  background-color: #ff9;
-  
-  h2 {
-    font-size: 1.3rem;
-    font-weight: normal;
-  }
-  .input-box {
-    padding: 6px;
-  }
-  .list {
-    padding: 0 20px;
 
-    .todo-tip {
-      display: block;
+  .main {
+    /* centering */
+    display: inline-block;
+    text-align: left;
+    padding: 30px 20px;
+    background-color: #ff9;
+    
+    h2 {
+      font-size: 1.3rem;
+      font-weight: normal;
+    }
 
-      li {
-        cursor: pointer;
+    .input-box {
+      padding: 6px;
+    }
+
+    .list {
+      padding: 0 20px;
+
+      .todo-tip {
+        display: block;
+
+        li {
+          cursor: pointer;
+        }
       }
     }
+  }
+
+  .todo-count {
+    text-align: left;
   }
 }
 
